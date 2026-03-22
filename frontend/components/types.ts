@@ -22,10 +22,18 @@ export type ReviewExam = {
   student_name: string | null;
   student_id: string | null;
   status: string;
+  parsing_status: string;
+  series_detected: number;
+  questions_detected: number;
+  correct_answers: number;
+  incorrect_answers: number;
+  review_answers: number;
+  score_suggested: number | null;
   created_at: string;
 };
 
 export type ReviewDetail = ReviewSummary & {
+  answer_key_structure_json: string | null;
   processed_exams: ReviewExam[];
 };
 

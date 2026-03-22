@@ -14,3 +14,13 @@
  ○ Compiling / ...
  ✓ Compiled / in 861ms (519 modules)
  GET / 200 in 1126ms
+ ✓ Compiled in 3.3s (533 modules)
+ GET / 200 in 213ms
+ ✓ Compiled in 2.4s (533 modules)
+ GET /reviews/4 200 in 155ms
+ GET /reviews/3 200 in 61ms
+ GET /reviews/7 200 in 66ms
+ GET /reviews/6 200 in 369ms
+ ✓ Compiled in 968ms (533 modules)
+ GET /reviews/9 200 in 137ms
+ GET /

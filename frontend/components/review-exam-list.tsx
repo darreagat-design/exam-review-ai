@@ -46,6 +46,15 @@ export function ReviewExamList({ exams }: ReviewExamListProps) {
                       Estado
                     </th>
                     <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-[0.16em] text-slate">
+                      Parsing
+                    </th>
+                    <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-[0.16em] text-slate">
+                      Comparacion
+                    </th>
+                    <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-[0.16em] text-slate">
+                      Puntaje sugerido
+                    </th>
+                    <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-[0.16em] text-slate">
                       Fecha
                     </th>
                   </tr>
