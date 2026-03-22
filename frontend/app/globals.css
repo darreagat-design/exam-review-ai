@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-paper text-ink;
+  background-image:
+    radial-gradient(circle at top left, rgba(155, 126, 70, 0.14), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(246, 244, 239, 0.95));
+  min-height: 100vh;
+}
+
+a {
+  @apply text-inherit no-underline;
+}
