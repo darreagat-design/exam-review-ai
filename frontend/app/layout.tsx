@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Exam Review AI",
-  description: "Sprint 1 scaffold for academic exam review workflows."
+  description: "Interfaz base en espanol para iniciar revisiones academicas de examenes."
 };
 
 type RootLayoutProps = Readonly<{

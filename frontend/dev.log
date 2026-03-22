@@ -1,0 +1,11 @@
+
+> exam-review-ai-frontend@0.1.0 dev
+> node ./node_modules/next/dist/bin/next dev
+
+  ▲ Next.js 14.2.30
+  - Local:        http://localhost:3000
+
+ ✓ Starting...
+ ✓ Ready in 3.8s
+ ○ Compiling / ...
+ ✓ Compiled / in 5.1s (467 modules)
