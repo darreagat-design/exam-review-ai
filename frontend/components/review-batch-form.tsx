@@ -106,8 +106,8 @@ export function ReviewBatchForm({ onReviewCreated }: ReviewBatchFormProps) {
           </h2>
           <p className="mt-4 text-sm leading-6 text-slate sm:text-base">
             Prepara una nueva revision cargando una answer key y los examenes de estudiantes. En
-            este sprint el formulario ya envia archivos al backend y registra la revision en
-            SQLite.
+            este sprint el formulario ya valida archivos de texto simples, extrae encabezados
+            basicos y registra la revision en SQLite.
           </p>
         </div>
 
@@ -132,13 +132,15 @@ export function ReviewBatchForm({ onReviewCreated }: ReviewBatchFormProps) {
             <div>
               <h3 className="text-base font-semibold text-ink">Estado del formulario</h3>
               {feedbackMessage ? (
-                <p
-                  className={`mt-2 text-sm ${
-                    feedbackType === "error" ? "text-[#8a3b2f]" : "text-slate"
+                <div
+                  className={`mt-3 rounded-2xl border px-4 py-3 text-sm leading-6 ${
+                    feedbackType === "error"
+                      ? "border-[#d8b3aa] bg-[#fff5f2] text-[#8a3b2f]"
+                      : "border-border bg-white text-slate"
                   }`}
                 >
                   {feedbackMessage}
-                </p>
+                </div>
               ) : null}
               {!feedbackMessage && canProcess ? (
                 <p className="mt-2 text-sm text-slate">

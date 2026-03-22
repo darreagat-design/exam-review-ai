@@ -9,3 +9,8 @@
  ✓ Ready in 2.9s
  ○ Compiling /reviews/[id] ...
  ✓ Compiled /reviews/[id] in 2.5s (502 modules)
+ GET /reviews/1 200 in 3920ms
+ GET /reviews/1 200 in 48ms
+ ○ Compiling / ...
+ ✓ Compiled / in 861ms (519 modules)
+ GET / 200 in 1126ms
