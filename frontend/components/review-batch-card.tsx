@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { ReviewSummary } from "@/components/types";
 
 type ReviewBatchCardProps = {
@@ -6,7 +8,11 @@ type ReviewBatchCardProps = {
 
 export function ReviewBatchCard({ review }: ReviewBatchCardProps) {
   return (
-    <article className="rounded-2xl border border-border bg-white p-5 shadow-soft">
+    <Link
+      href={`/reviews/${review.id}`}
+      className="block rounded-2xl border border-border bg-white p-5 shadow-soft transition hover:-translate-y-0.5 hover:border-accent/70"
+    >
+      <article>
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <h3 className="text-lg font-semibold tracking-tight text-ink">{review.title}</h3>
@@ -40,6 +46,12 @@ export function ReviewBatchCard({ review }: ReviewBatchCardProps) {
           <dd className="mt-1 text-base font-medium text-ink">{review.status}</dd>
         </div>
       </dl>
-    </article>
+      <div className="mt-5 flex justify-end">
+        <span className="inline-flex items-center rounded-full border border-border px-4 py-2 text-sm font-medium text-slate">
+          Ver revision
+        </span>
+      </div>
+      </article>
+    </Link>
   );
 }

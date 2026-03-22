@@ -7,7 +7,5 @@
 
  ✓ Starting...
  ✓ Ready in 2.9s
- ○ Compiling / ...
- ✓ Compiled / in 1284ms (460 modules)
- GET / 200 in 840ms
- GET / 200 in 1599ms
+ ○ Compiling /reviews/[id] ...
+ ✓ Compiled /reviews/[id] in 2.5s (502 modules)

@@ -1,4 +1,8 @@
-import { CreateReviewResponse, ReviewsListResponse } from "@/components/types";
+import {
+  CreateReviewResponse,
+  ReviewDetailResponse,
+  ReviewsListResponse
+} from "@/components/types";
 
 const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8000";
 
@@ -41,4 +45,18 @@ export async function createReviewBatch(
   }
 
   return payload as CreateReviewResponse;
+}
+
+export async function fetchReviewById(reviewId: number): Promise<ReviewDetailResponse> {
+  const response = await fetch(`${apiBaseUrl}/api/reviews/${reviewId}`, {
+    cache: "no-store"
+  });
+
+  const payload = (await response.json()) as ReviewDetailResponse | ApiErrorResponse;
+  if (!response.ok) {
+    const errorPayload = payload as ApiErrorResponse;
+    throw new Error(errorPayload.detail ?? "No fue posible cargar la revision.");
+  }
+
+  return payload as ReviewDetailResponse;
 }

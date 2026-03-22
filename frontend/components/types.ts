@@ -15,3 +15,20 @@ export type CreateReviewResponse = {
 export type ReviewsListResponse = {
   revisiones: ReviewSummary[];
 };
+
+export type ReviewExam = {
+  id: number;
+  student_exam_filename: string;
+  student_name: string | null;
+  student_id: string | null;
+  status: string;
+  created_at: string;
+};
+
+export type ReviewDetail = ReviewSummary & {
+  processed_exams: ReviewExam[];
+};
+
+export type ReviewDetailResponse = {
+  revision: ReviewDetail;
+};
