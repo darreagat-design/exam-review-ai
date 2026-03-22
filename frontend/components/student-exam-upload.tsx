@@ -2,12 +2,16 @@ type StudentExamUploadProps = {
   selectedFiles: File[];
   onFilesAdd: (files: File[]) => void;
   onFileRemove: (fileKey: string) => void;
+  disabled?: boolean;
+  resetKey?: number;
 };
 
 export function StudentExamUpload({
   selectedFiles,
   onFilesAdd,
-  onFileRemove
+  onFileRemove,
+  disabled = false,
+  resetKey = 0
 }: StudentExamUploadProps) {
   return (
     <section className="rounded-2xl border border-border bg-white p-6 shadow-soft">
@@ -26,15 +30,17 @@ export function StudentExamUpload({
         </span>
       </div>
 
-      <label className="mt-5 flex cursor-pointer flex-col items-center justify-center rounded-2xl border border-dashed border-border bg-paper/70 px-6 py-8 text-center transition hover:border-accent hover:bg-paper">
+      <label className="mt-5 flex cursor-pointer flex-col items-center justify-center rounded-2xl border border-dashed border-border bg-paper/70 px-6 py-8 text-center transition hover:border-accent hover:bg-paper aria-disabled:cursor-not-allowed aria-disabled:opacity-70">
         <span className="text-sm font-medium text-ink">Seleccionar examenes</span>
         <span className="mt-2 text-sm text-slate">
           Puedes cargar varios archivos a la vez desde tu equipo.
         </span>
         <input
+          key={resetKey}
           type="file"
           multiple
           className="sr-only"
+          disabled={disabled}
           onChange={(event) => onFilesAdd(Array.from(event.target.files ?? []))}
         />
       </label>
@@ -60,8 +66,9 @@ export function StudentExamUpload({
                 </div>
                 <button
                   type="button"
+                  disabled={disabled}
                   onClick={() => onFileRemove(`${file.name}-${file.lastModified}`)}
-                  className="inline-flex items-center justify-center rounded-full border border-border px-4 py-2 text-sm font-medium text-slate transition hover:border-accent hover:text-ink"
+                  className="inline-flex items-center justify-center rounded-full border border-border px-4 py-2 text-sm font-medium text-slate transition hover:border-accent hover:text-ink disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   Eliminar
                 </button>

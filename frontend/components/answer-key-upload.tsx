@@ -1,9 +1,16 @@
 type AnswerKeyUploadProps = {
   selectedFile: File | null;
   onFileChange: (file: File | null) => void;
+  disabled?: boolean;
+  resetKey?: number;
 };
 
-export function AnswerKeyUpload({ selectedFile, onFileChange }: AnswerKeyUploadProps) {
+export function AnswerKeyUpload({
+  selectedFile,
+  onFileChange,
+  disabled = false,
+  resetKey = 0
+}: AnswerKeyUploadProps) {
   return (
     <section className="rounded-2xl border border-border bg-white p-6 shadow-soft">
       <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
@@ -18,7 +25,7 @@ export function AnswerKeyUpload({ selectedFile, onFileChange }: AnswerKeyUploadP
         </span>
       </div>
 
-      <label className="mt-5 flex cursor-pointer flex-col items-center justify-center rounded-2xl border border-dashed border-border bg-paper/70 px-6 py-8 text-center transition hover:border-accent hover:bg-paper">
+      <label className="mt-5 flex cursor-pointer flex-col items-center justify-center rounded-2xl border border-dashed border-border bg-paper/70 px-6 py-8 text-center transition hover:border-accent hover:bg-paper aria-disabled:cursor-not-allowed aria-disabled:opacity-70">
         <span className="text-sm font-medium text-ink">
           {selectedFile ? "Reemplazar answer key" : "Seleccionar answer key"}
         </span>
@@ -26,8 +33,10 @@ export function AnswerKeyUpload({ selectedFile, onFileChange }: AnswerKeyUploadP
           Formatos de ejemplo: PDF, DOCX o imagen escaneada.
         </span>
         <input
+          key={resetKey}
           type="file"
           className="sr-only"
+          disabled={disabled}
           onChange={(event) => onFileChange(event.target.files?.[0] ?? null)}
         />
       </label>

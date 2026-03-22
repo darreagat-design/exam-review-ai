@@ -1,6 +1,4 @@
-import { processedReviewsMock } from "@/components/mock-processed-reviews";
-import { ProcessedReviewsList } from "@/components/processed-reviews-list";
-import { ReviewBatchForm } from "@/components/review-batch-form";
+import { ReviewsDashboard } from "@/components/reviews-dashboard";
 
 export default function HomePage() {
   return (
@@ -17,14 +15,7 @@ export default function HomePage() {
           evolucionar hacia revisiones automatizadas en los proximos sprints.
         </p>
       </div>
-
-      <div className="mt-10">
-        <ReviewBatchForm />
-      </div>
-
-      <div className="mt-10">
-        <ProcessedReviewsList reviews={processedReviewsMock} />
-      </div>
+      <ReviewsDashboard />
     </main>
   );
 }

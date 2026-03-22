@@ -3,11 +3,20 @@
 import { useMemo, useState } from "react";
 
 import { AnswerKeyUpload } from "@/components/answer-key-upload";
+import { createReviewBatch } from "@/components/reviews-api";
 import { StudentExamUpload } from "@/components/student-exam-upload";
 
-export function ReviewBatchForm() {
+type ReviewBatchFormProps = {
+  onReviewCreated: () => Promise<void> | void;
+};
+
+export function ReviewBatchForm({ onReviewCreated }: ReviewBatchFormProps) {
   const [answerKey, setAnswerKey] = useState<File | null>(null);
   const [studentExams, setStudentExams] = useState<File[]>([]);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [feedbackMessage, setFeedbackMessage] = useState<string | null>(null);
+  const [feedbackType, setFeedbackType] = useState<"success" | "error" | null>(null);
+  const [resetKey, setResetKey] = useState(0);
 
   const missingMessages = useMemo(() => {
     const messages: string[] = [];
@@ -58,13 +67,31 @@ export function ReviewBatchForm() {
     );
   };
 
-  const handleProcess = () => {
-    if (!canProcess) {
+  const handleProcess = async () => {
+    if (!canProcess || !answerKey) {
       return;
     }
 
-    // Sprint 2: dejamos la interaccion en estado local mientras se prepara la conexion con FastAPI.
-    window.alert("La interfaz ya esta lista. El procesamiento real se conectara en el siguiente sprint.");
+    setIsSubmitting(true);
+    setFeedbackMessage(null);
+    setFeedbackType(null);
+
+    try {
+      const response = await createReviewBatch(answerKey, studentExams);
+      setAnswerKey(null);
+      setStudentExams([]);
+      setResetKey((currentValue) => currentValue + 1);
+      setFeedbackType("success");
+      setFeedbackMessage(response.mensaje);
+      await onReviewCreated();
+    } catch (error) {
+      setFeedbackType("error");
+      setFeedbackMessage(
+        error instanceof Error ? error.message : "No fue posible procesar la revision."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -79,17 +106,24 @@ export function ReviewBatchForm() {
           </h2>
           <p className="mt-4 text-sm leading-6 text-slate sm:text-base">
             Prepara una nueva revision cargando una answer key y los examenes de estudiantes. En
-            este sprint la experiencia es visual y usa estado local para dejar lista la integracion
-            futura con FastAPI.
+            este sprint el formulario ya envia archivos al backend y registra la revision en
+            SQLite.
           </p>
         </div>
 
         <div className="mt-8 grid gap-6">
-          <AnswerKeyUpload selectedFile={answerKey} onFileChange={handleAnswerKeyChange} />
+          <AnswerKeyUpload
+            selectedFile={answerKey}
+            onFileChange={handleAnswerKeyChange}
+            disabled={isSubmitting}
+            resetKey={resetKey}
+          />
           <StudentExamUpload
             selectedFiles={studentExams}
             onFilesAdd={handleStudentExamAdd}
             onFileRemove={handleStudentExamRemove}
+            disabled={isSubmitting}
+            resetKey={resetKey}
           />
         </div>
 
@@ -97,26 +131,36 @@ export function ReviewBatchForm() {
           <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
             <div>
               <h3 className="text-base font-semibold text-ink">Estado del formulario</h3>
-              {canProcess ? (
-                <p className="mt-2 text-sm text-slate">
-                  Todo listo para conectar este flujo con el backend en el siguiente sprint.
+              {feedbackMessage ? (
+                <p
+                  className={`mt-2 text-sm ${
+                    feedbackType === "error" ? "text-[#8a3b2f]" : "text-slate"
+                  }`}
+                >
+                  {feedbackMessage}
                 </p>
-              ) : (
+              ) : null}
+              {!feedbackMessage && canProcess ? (
+                <p className="mt-2 text-sm text-slate">
+                  Todo listo para enviar los archivos y crear una revision.
+                </p>
+              ) : null}
+              {!feedbackMessage && !canProcess ? (
                 <ul className="mt-2 space-y-1 text-sm text-slate">
                   {missingMessages.map((message) => (
                     <li key={message}>{message}</li>
                   ))}
                 </ul>
-              )}
+              ) : null}
             </div>
 
             <button
               type="button"
               onClick={handleProcess}
-              disabled={!canProcess}
+              disabled={!canProcess || isSubmitting}
               className="inline-flex min-w-[220px] items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-accent/40 focus:ring-offset-2 disabled:cursor-not-allowed disabled:border disabled:border-border disabled:bg-white disabled:text-slate enabled:bg-ink enabled:text-white enabled:hover:bg-[#1b3147]"
             >
-              Procesar revision
+              {isSubmitting ? "Procesando revision..." : "Procesar revision"}
             </button>
           </div>
         </div>
