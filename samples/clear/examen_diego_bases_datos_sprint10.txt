@@ -1,0 +1,30 @@
+PARCIAL 3 - BASES DE DATOS
+Nombre: Diego Castro
+Carné: 202410002
+
+SERIE I - CONCEPTOS FUNDAMENTALES
+
+1. ¿Qué es una clave primaria?
+Respuesta: Campo especial de seguridad.
+
+2. Verdadero o falso: Una clave foránea puede repetir valores.
+Respuesta: Verdadero
+
+3. Complete: El proceso de organizar datos para reducir redundancia se llama __________.
+Respuesta: normalización
+
+4. ¿Qué comando SQL se usa para consultar datos?
+Respuesta: INSERT
+
+SERIE II - RESPUESTAS DIRECTAS
+
+1. Mencione dos operaciones del álgebra relacional.
+Respuesta: selección y proyección
+
+2. ¿Qué hace un JOIN?
+Respuesta: Une tablas relacionadas.
+
+SERIE III - IDENTIFICACIÓN DE CASOS ABIERTOS
+
+1. ¿Qué es la normalización en bases de datos?
+Respuesta: Ayuda a ordenar mejor la base de datos.

@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.router import api_router
 from app.core.config import settings
@@ -7,7 +8,20 @@ from app.db.session import init_db
 app = FastAPI(
     title=settings.app_name,
     version="0.1.0",
-    description="Sprint 1 backend scaffold for Exam Review AI.",
+    description="Backend para la gestion de revisiones academicas de Exam Review AI.",
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:3000",
+        "http://localhost:3001",
+        "http://127.0.0.1:3000",
+        "http://127.0.0.1:3001",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 

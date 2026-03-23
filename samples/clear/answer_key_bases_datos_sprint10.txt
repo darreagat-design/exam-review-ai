@@ -1,0 +1,41 @@
+PARCIAL 3 - BASES DE DATOS
+Curso: Bases de Datos
+Docente: Lic. Ejemplo
+
+INSTRUCCIONES GENERALES:
+- Lea cuidadosamente cada serie.
+- Responda de forma clara.
+- Las preguntas abiertas extensas pueden requerir revisión manual.
+
+SERIE I - CONCEPTOS FUNDAMENTALES
+Valor de la serie: 4 puntos
+Cada pregunta vale 1 punto
+
+1. ¿Qué es una clave primaria?
+Respuesta correcta: Campo o conjunto de campos que identifica de forma única cada registro en una tabla.
+
+2. Verdadero o falso: Una clave foránea puede repetir valores.
+Respuesta correcta: Verdadero
+
+3. Complete: El proceso de organizar datos para reducir redundancia se llama __________.
+Respuesta correcta: normalización
+
+4. ¿Qué comando SQL se usa para consultar datos?
+Respuesta correcta: SELECT
+
+SERIE II - RESPUESTAS DIRECTAS
+Esta serie vale 4 puntos
+2 puntos c/u
+
+1. Mencione dos operaciones del álgebra relacional.
+Respuesta correcta: selección y proyección
+
+2. ¿Qué hace un JOIN?
+Respuesta correcta: combina filas de dos o más tablas según una condición relacionada
+
+SERIE III - IDENTIFICACIÓN DE CASOS ABIERTOS
+Valor de la serie: 2 puntos
+Cada pregunta vale 2 puntos
+
+1. ¿Qué es la normalización en bases de datos?
+Respuesta correcta: Proceso de organizar los datos para reducir redundancia y mejorar integridad.

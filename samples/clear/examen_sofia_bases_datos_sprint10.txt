@@ -1,0 +1,30 @@
+PARCIAL 3 - BASES DE DATOS
+Nombre: Sofía Herrera
+Carné: 202410003
+
+SERIE I - CONCEPTOS FUNDAMENTALES
+
+1. ¿Qué es una clave primaria?
+Respuesta: Es una clave importante del sistema.
+
+2. Verdadero o falso: Una clave foránea puede repetir valores.
+Respuesta: Creo que verdadero.
+
+3. Complete: El proceso de organizar datos para reducir redundancia se llama __________.
+Respuesta: normalización
+
+4. ¿Qué comando SQL se usa para consultar datos?
+Respuesta: select
+
+SERIE II - RESPUESTAS DIRECTAS
+
+1. Mencione dos operaciones del álgebra relacional.
+Respuesta: selección y otra que no recuerdo
+
+2. ¿Qué hace un JOIN?
+Respuesta: Sirve para relacionar tablas y datos, dependiendo de cómo se use.
+
+SERIE III - IDENTIFICACIÓN DE CASOS ABIERTOS
+
+1. ¿Qué es la normalización en bases de datos?
+Respuesta: Es una técnica que organiza datos, pero no recuerdo exactamente cómo funciona.

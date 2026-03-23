@@ -9,6 +9,7 @@ class Settings(BaseSettings):
     app_name: str = "Exam Review AI"
     app_env: str = "development"
     openai_api_key: str = ""
+    openai_model: str = "gpt-4o-mini"
     database_url: str = "sqlite:///./exam_review_ai.db"
 
     model_config = SettingsConfigDict(
