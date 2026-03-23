@@ -174,11 +174,3 @@ El sistema genera:
    Usa un archivo vacio, un txt sin contenido util o una answer key no valida
    Resultado esperado: rechazo o `error`
 
-## Estado final
-
-El proyecto ya queda listo para:
-
-- demo funcional
-- pruebas en Postman
-- grabacion de video
-- presentacion tecnica del flujo completo
