@@ -1,0 +1,14 @@
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ Failed to generate static paths for /reviews/[id]:
+Error [PageNotFoundError]: Cannot find module for page: /reviews/[id]/page
+    at getPagePath (C:\Users\Yoje\OneDrive\Desktop\IA Curso_&_TI\examen-review-ai\frontend\node_modules\next\dist\server\require.js:94:15)
+    at requirePage (C:\Users\Yoje\OneDrive\Desktop\IA Curso_&_TI\examen-review-ai\frontend\node_modules\next\dist\server\require.js:99:22)
+    at C:\Users\Yoje\OneDrive\Desktop\IA Curso_&_TI\examen-review-ai\frontend\node_modules\next\dist\server\load-components.js:103:84
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async loadComponentsImpl (C:\Users\Yoje\OneDrive\Desktop\IA Curso_&_TI\examen-review-ai\frontend\node_modules\next\dist\server\load-components.js:103:26)
+    at async Object.loadStaticPaths (C:\Users\Yoje\OneDrive\Desktop\IA Curso_&_TI\examen-review-ai\frontend\node_modules\next\dist\server\dev\static-paths-worker.js:23:24) {
+  type: 'PageNotFoundError',
+  code: 'ENOENT'
+}
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename 'C:\Users\Yoje\OneDrive\Desktop\IA Curso_&_TI\examen-review-ai\frontend\.next\cache\webpack\client-development\2.pack.gz_' -> 'C:\Users\Yoje\OneDrive\Desktop\IA Curso_&_TI\examen-review-ai\frontend\.next\cache\webpack\client-development\2.pack.gz'
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename 'C:\Users\Yoje\OneDrive\Desktop\IA Curso_&_TI\examen-review-ai\frontend\.next\cache\webpack\client-development\1.pack.gz_' -> 'C:\Users\Yoje\OneDrive\Desktop\IA Curso_&_TI\examen-review-ai\frontend\.next\cache\webpack\client-development\1.pack.gz'

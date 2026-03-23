@@ -34,13 +34,7 @@ export function ReviewExamList({ exams }: ReviewExamListProps) {
                 <thead className="bg-paper/80">
                   <tr>
                     <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-[0.16em] text-slate">
-                      Archivo del examen
-                    </th>
-                    <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-[0.16em] text-slate">
                       Estudiante
-                    </th>
-                    <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-[0.16em] text-slate">
-                      Carne
                     </th>
                     <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-[0.16em] text-slate">
                       Estado
@@ -55,7 +49,7 @@ export function ReviewExamList({ exams }: ReviewExamListProps) {
                       Puntaje sugerido
                     </th>
                     <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-[0.16em] text-slate">
-                      Fecha
+                      Acciones
                     </th>
                   </tr>
                 </thead>

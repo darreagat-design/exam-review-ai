@@ -1,5 +1,6 @@
 import {
   CreateReviewResponse,
+  ExamResultDetailResponse,
   ReviewDetailResponse,
   ReviewsListResponse
 } from "@/components/types";
@@ -59,4 +60,18 @@ export async function fetchReviewById(reviewId: number): Promise<ReviewDetailRes
   }
 
   return payload as ReviewDetailResponse;
+}
+
+export async function fetchResultById(resultId: number): Promise<ExamResultDetailResponse> {
+  const response = await fetch(`${apiBaseUrl}/api/results/${resultId}`, {
+    cache: "no-store"
+  });
+
+  const payload = (await response.json()) as ExamResultDetailResponse | ApiErrorResponse;
+  if (!response.ok) {
+    const errorPayload = payload as ApiErrorResponse;
+    throw new Error(errorPayload.detail ?? "No fue posible cargar el resultado.");
+  }
+
+  return payload as ExamResultDetailResponse;
 }
