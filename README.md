@@ -48,14 +48,13 @@ exam-review-ai/
 
 El backend trabaja como un pipeline de herramientas simples y deterministicas:
 
-- `extract_text_tool`
+- `text_reader_tool`
 - `answer_key_validator_tool`
 - `student_exam_validator_tool`
 - `header_parser_tool`
 - `series_parser_tool`
 - `question_parser_tool`
 - `answer_compare_tool`
-- `semantic_short_evaluator`
 
 Cada examen guarda el rastro de herramientas en `tool_trace` dentro de `result_json`.
 
@@ -159,6 +158,5 @@ El sistema genera:
 - Abrir una revision desde `Revisiones procesadas`.
 - Abrir un examen individual con `Ver resultado`.
 - Revisar series, preguntas, warnings y herramientas usadas.
-
 
 
