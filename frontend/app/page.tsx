@@ -11,8 +11,7 @@ export default function HomePage() {
           Exam Review AI
         </h1>
         <p className="mt-5 max-w-2xl text-base leading-7 text-slate sm:text-lg">
-          Organiza answer keys y examenes de estudiantes en una interfaz clara, lista para
-          evolucionar hacia revisiones automatizadas en los proximos sprints.
+          Organiza answer keys y examenes de estudiantes en una interfaz clara
         </p>
       </div>
       <ReviewsDashboard />
