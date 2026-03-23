@@ -22,7 +22,7 @@ export function ProcessedReviewsList({
           Revisiones procesadas
         </h2>
         <p className="mt-3 text-sm leading-6 text-slate sm:text-base">
-          Las revisiones guardadas en SQLite apareceran aqui automaticamente.
+          Aqui apareceran automaticamente las revisiones guardadas.
         </p>
       </div>
 

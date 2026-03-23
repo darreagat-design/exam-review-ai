@@ -105,9 +105,9 @@ export function ReviewBatchForm({ onReviewCreated }: ReviewBatchFormProps) {
             Iniciar una revision
           </h2>
           <p className="mt-4 text-sm leading-6 text-slate sm:text-base">
-            Prepara una nueva revision cargando una answer key y los examenes de estudiantes. En
-            este sprint el formulario ya valida archivos de texto simples, extrae encabezados
-            basicos y registra la revision en SQLite.
+            Prepara una nueva revision cargando una answer key y los examenes de estudiantes. El
+            formulario valida archivos de texto simples, extrae encabezados basicos y registra la
+            revision en SQLite.
           </p>
         </div>
 

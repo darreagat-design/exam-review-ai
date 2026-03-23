@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Exam Review AI",
-  description: "Interfaz base en espanol para iniciar revisiones academicas de examenes."
+  description: " "
 };
 
 type RootLayoutProps = Readonly<{
