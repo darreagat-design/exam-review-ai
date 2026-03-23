@@ -160,17 +160,5 @@ El sistema genera:
 - Abrir un examen individual con `Ver resultado`.
 - Revisar series, preguntas, warnings y herramientas usadas.
 
-## Casos sugeridos para el video
 
-1. Caso claro
-   Usa `samples/clear/answer_key_bases_datos_sprint10.txt` junto con uno o mas de los examenes `examen_andrea_bases_datos_sprint10.txt`, `examen_diego_bases_datos_sprint10.txt` o `examen_sofia_bases_datos_sprint10.txt`
-   Resultado esperado: revision creada y examenes procesados con resultado estructurado
-
-2. Caso ambiguo
-   Usa el mismo set de prueba y fuerza un caso con respuestas parciales o equivalencias breves para observar `needs_review` o uso de `semantic_short`
-   Resultado esperado: `needs_review` si hay duda o equivalencia semantica insuficiente
-
-3. Caso error
-   Usa un archivo vacio, un txt sin contenido util o una answer key no valida
-   Resultado esperado: rechazo o `error`
 
