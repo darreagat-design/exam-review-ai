@@ -23,4 +23,6 @@
  GET /reviews/6 200 in 369ms
  ✓ Compiled in 968ms (533 modules)
  GET /reviews/9 200 in 137ms
- GET /
+ GET /reviews/8 200 in 46ms
+ ✓ Compiled in 929ms (533 modules)
+ GET /reviews/1

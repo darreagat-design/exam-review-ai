@@ -16,6 +16,7 @@ export function ReviewExamRow({ exam }: ReviewExamRowProps) {
       </td>
       <td className="px-4 py-4 text-sm text-slate">
         {exam.correct_answers} correctas, {exam.incorrect_answers} incorrectas, {exam.review_answers} revision
+        {exam.semantic_matches > 0 ? `, ${exam.semantic_matches} semantica` : ""}
       </td>
       <td className="px-4 py-4 text-sm text-slate">
         {exam.score_suggested !== null ? exam.score_suggested : "Requiere revision"}

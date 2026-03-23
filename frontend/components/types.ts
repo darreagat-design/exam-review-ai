@@ -29,6 +29,7 @@ export type ReviewExam = {
   incorrect_answers: number;
   review_answers: number;
   score_suggested: number | null;
+  semantic_matches: number;
   created_at: string;
 };
 
